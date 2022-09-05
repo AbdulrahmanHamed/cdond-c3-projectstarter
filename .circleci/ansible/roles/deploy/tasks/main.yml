@@ -13,7 +13,7 @@
   args:
     chdir: /home/ubuntu/dist
   shell: |
-    nodejs main.js
+    pm2 start main.js
   environment:
       ENVIRONMENT: production
       TYPEORM_CONNECTION: "{{ lookup('env', 'TYPEORM_CONNECTION') }}"
