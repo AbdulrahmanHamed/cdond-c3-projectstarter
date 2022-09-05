@@ -21,6 +21,7 @@
 - name: "Extract artifact"
   shell: |
     tar xvzf artifact.tar.gz
+    cd backend/
 - name: "Run app"
   become: true
   shell: |

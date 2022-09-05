@@ -194,7 +194,7 @@ jobs:
           name: Install dependencies
           command: |
             yum install -y tar gzip ansible
-            curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
+            curl -sL https://rpm.nodesource.com/setup_10.x | bash -
             yum install nodejs
       - run:
           name: Get backend url
