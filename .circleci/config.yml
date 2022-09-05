@@ -290,8 +290,8 @@ jobs:
           command: |
             export BACKEND_IP=$(aws ec2 describe-instances \
               --filters "Name=tag:Name,Values=backend-${CIRCLE_WORKFLOW_ID:0:7}" \
-              --query 'Reservations[0].Instances[0].PublicIpAddress')
-            export API_URL="http://${BACKEND_IP}:3030" | tr -d '"'
+              --query 'Reservations[0].Instances[0].PublicIpAddress') | tr -d '"'
+            export API_URL="http://${BACKEND_IP}:3030" 
             if curl "${API_URL}/api/status" | grep "ok"
             then
                 return 0
