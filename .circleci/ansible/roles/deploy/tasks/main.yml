@@ -9,7 +9,7 @@
   debugger: on_failed
   become: true
   args:
-    chdir: /home/ubuntu
+    chdir: /home/ubuntu/dist
   shell: |
     npm install
     pm2 stop default
