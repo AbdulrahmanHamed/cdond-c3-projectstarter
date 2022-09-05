@@ -1,14 +1,12 @@
 ---
-- name: "Print current directory"
-  shell: |
-    pwd
-    ls
 - name: "Extract artifact"
+  debugger: on_failed
   unarchive: 
-    src: artifact.tar.gz
+    src: /root/project/artifact.tar.gz
     dest: /home/ubuntu/
     remote_src:  no
 - name: "Run app"
+  debugger: on_failed
   become: true
   shell: |
     cd /home/ubuntu
